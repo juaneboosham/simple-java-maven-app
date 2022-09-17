@@ -6,6 +6,11 @@ pipeline {
         }
     }
     stages {
+        stage('Build') {
+            steps {
+                sh './jenkins/scripts/build.sh'
+            }
+        }
         stage('Test') {
             steps {
                 sh 'mvn test'

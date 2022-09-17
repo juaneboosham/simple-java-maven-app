@@ -1,14 +1,14 @@
 pipeline {
     agent {
         docker {
-            image 'maven:3.6'
+            image 'maven:3.8'
             args '-v /root/.m2:/root/.m2'
         }
     }
     stages {
         stage('Build') {
             steps {
-                sh './jenkins/scripts/build.sh'
+                sh 'mvn -B -DskipTests clean package -Denforcer.fail=false'
             }
         }
         stage('Test') {

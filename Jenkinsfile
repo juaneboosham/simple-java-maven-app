@@ -1,4 +1,18 @@
 pipeline {
+    triggers {
+        GenericTrigger(
+                genericVariables: [
+                        [key: 'commit', value: '$.commits[0].id'],
+                        [key: 'committer', value: '$.commits[0].committer.name'],
+                        [key: 'ref', value: '$.ref']
+                ],
+                token: 'testToken',
+                causeString: 'Triggered by github webhook on commit $commit to $ref by $committer',
+                printContributedVariables: true,
+                printPostContent: true,
+                silentResponse: true
+        )
+    }
     agent {
         docker {
             image 'maven:3.8'

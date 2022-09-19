@@ -13,12 +13,7 @@ pipeline {
                 silentResponse: true
         )
     }
-    agent {
-        docker {
-            image 'maven:3.8'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
+    agent any
     stages {
         stage('Checkout') {
             steps {

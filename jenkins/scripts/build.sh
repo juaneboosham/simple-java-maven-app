@@ -1,3 +1,3 @@
 echo $(java -version)
-echo $(mvn -v)
+echo $(docker -v)
 mvn -B -DskipTests clean package -Denforcer.fail=false

@@ -47,6 +47,14 @@ pipeline {
                 }
             }
         }
+        stage('GenImage') {
+          steps {
+            sh '''
+             set +x
+             ./jenkins/scripts/gen-image.sh
+             '''
+          }
+        }
         stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'

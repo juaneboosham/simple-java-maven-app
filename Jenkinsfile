@@ -22,7 +22,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './jenkins/scripts/build.sh'
+                sh '''
+                    set -x
+                    ./jenkins/scripts/build.sh
+                '''
             }
         }
         stage('Test') {

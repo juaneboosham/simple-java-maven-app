@@ -23,7 +23,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    set -x
+                    set +x
                     ./jenkins/scripts/build.sh
                 '''
             }

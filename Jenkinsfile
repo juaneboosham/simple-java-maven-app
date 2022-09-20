@@ -69,7 +69,7 @@ pipeline {
                ok 'Yes, go ahead.'
            }
             steps {
-               sh './jenkins/scripts/deploy.sh prod'
+               sh './jenkins/scripts/deployToProd.sh'
             }
         }
     }

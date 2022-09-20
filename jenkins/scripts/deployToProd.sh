@@ -9,8 +9,5 @@ REMOTE_HOST=ec2-user@54.90.244.6
 
 echo ENV
 
-ssh -i /etc/firstECC.pem -o "StrictHostKeyChecking no" -t $REMOTE_HOST <<remotessh
-docker run $REMOTE_TAG
-exit
-remotessh
+ssh -i /etc/firstECC.pem -o "StrictHostKeyChecking no" -t $REMOTE_HOST "docker run $REMOTE_TAG"
 

@@ -29,5 +29,6 @@ set -x
 host=$(cat /etc/docker-registry/host)
 LOCAL_TAG=localtag
 REMOTE_TAG=$host/$LOCAL_TAG
+PROFILES=$1
 
 docker run $REMOTE_TAG

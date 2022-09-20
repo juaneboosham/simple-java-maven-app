@@ -50,9 +50,17 @@ pipeline {
              '''
           }
         }
-        stage('Deliver') {
+        stage('DeployToQa') {
+            options {
+               timeout(time: 60, unit: 'SECONDS')
+            }
+
+           input {
+               message 'Do you want to deploy to QA?'
+               ok 'Yes, go ahead.'
+           }
             steps {
-                sh './jenkins/scripts/deliver.sh'
+               sh './jenkins/scripts/deploy.sh qa'
             }
         }
     }

@@ -25,6 +25,7 @@
 #set -x
 #java -jar target/${NAME}-${VERSION}.jar
 
+set -x
 host=$(cat /etc/docker-registry/host)
 LOCAL_TAG=localtag
 REMOTE_TAG=$host/$LOCAL_TAG

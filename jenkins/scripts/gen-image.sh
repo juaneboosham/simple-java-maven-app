@@ -2,7 +2,7 @@
 set -x
 
 host=$(cat /etc/docker-registry/host)
-#echo $(docker -v)
+echo $(docker -v)
 
 LOCAL_TAG=localtag
 REMOTE_TAG=$host/$LOCAL_TAG

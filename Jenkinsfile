@@ -6,7 +6,7 @@ pipeline {
                         [key: 'committer', value: '$.commits[0].committer.name'],
                         [key: 'ref', value: '$.ref']
                 ],
-                token: 'testToken',
+                token: 'maven',
                 causeString: 'Triggered by github webhook on commit $commit to $ref by $committer',
                 printContributedVariables: true,
                 printPostContent: true,
